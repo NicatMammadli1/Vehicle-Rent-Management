@@ -1,0 +1,22 @@
+import java.util.ArrayList;
+public class RentalSystem {
+
+    public static void main(String[] args) {
+
+        ArrayList<Vehicle> vehicles = new ArrayList<>();
+
+        vehicles.add(new Car("C001", "Toyota", 2020, 50.0));
+        vehicles.add(new Truck("T001", "Ford", 2018, 70.0, 10000, "Diesel"));
+        vehicles.add(new Bike("B001", "Yamaha", 2021, 30.0, "Sport", "Petrol"));
+
+
+        System.out.println("=== Vehicle Details ===");
+        for (Vehicle vehicle : vehicles) {
+            vehicle.displayDetails();
+        }
+
+        Customer customer = new Customer("Nijat Mammadli", 20, 770);
+        System.out.println("=== Customer Details ===");
+        customer.displayDetails();
+    }
+}
