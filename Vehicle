@@ -1,0 +1,86 @@
+public class Vehicle
+{
+    private String vehicleId;
+    private double rentCostPerDay;
+    private String renterName;
+    private boolean isAvailable;
+    private String brandName;
+    private int modelYear;
+    private int rentedDays;
+
+    public Vehicle(double rentCostPerDay, String brandName, int modelYear)
+    {
+        this.rentCostPerDay = rentCostPerDay;
+        this.renterName = "";
+        this.brandName = brandName; 
+        this.isAvailable = true;
+        this.rentedDays = 0;
+        this.modelYear = modelYear;
+        this.vehicleId = "";
+    }
+    public double calculateTotalRent() 
+    {
+        return rentCostPerDay * rentedDays;
+    }
+    public void rentCar(String renterName, int rentedDays)
+    {
+        if(isAvailable)
+        {
+            this.renterName = renterName;
+            this.rentedDays = rentedDays;
+            this.isAvailable = false;
+            System.out.println("The Vehicle is rented by " + name);
+        }
+        else
+        {
+            System.out.println("Vehicle is not available");
+        }
+    }
+    public void returnVehcile()
+    {
+        this.renterName = "";
+        this.rentedDays = 0;
+        this.isAvailable = true;
+    }
+    public double getRentCostPerDay()
+    {
+        return rentCostPerDay;
+    }
+    public void setRentCostPerDay(double rentCostPerDay) 
+    {
+        this.rentCostPerDay = rentCostPerDay;
+    }
+    public String getRenterName()
+    {
+        return renterName;
+    }
+    public String getVehicleId()
+    {
+        return vehicleId;
+    }
+    public String getBrandName()
+    {
+        return brandName;
+    }
+    public int getModelYear()
+    {
+        return modelYear;
+    }
+    public boolean isAvailable()
+    {
+        return isAvailable;
+    }
+    public void displayInfo()
+    {
+        System.out.println("Brand: " + brandName);
+        System.out.println("Model Year: " + modelYear);
+        System.out.println("Rent Cost Per Day: $" + rentCostPerDay); 
+        System.out.println("Available: " + (isAvailable ? "Yes" : "No"));
+        if (!isAvailable) 
+        {
+            System.out.println("Rented to: " + renterName); 
+            System.out.println("Rented for: " + rentedDays + " days"); 
+        }
+
+    }
+}
