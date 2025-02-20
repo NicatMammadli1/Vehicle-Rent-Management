@@ -1,0 +1,27 @@
+public class Bike extends Vehicles
+{
+ 
+    private String bikeType;
+    private String fuelType;
+
+    public Bike(String vehicleId, String brandName, int modelYear, double rentPricePerDay, int loadSize, String fuelType)
+    {
+        super(vehicleId, brandName, modelYear, rentPricePerDay);
+        this.bikeType = bikeType;
+        this.fuelType = fuelType;
+    }
+    public String getBikeType()
+    {
+        return bikeType;
+    }
+    public String getFuelType()
+    {
+        return fuelType;
+    }
+    @Override
+    public void displayDetails() {
+        super.displayDetails();
+        System.out.println("Bike Type: " + bikeType);
+        System.out.println("Fuel Type: " + fuelType);
+    }
+}
