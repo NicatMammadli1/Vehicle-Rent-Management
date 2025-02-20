@@ -1,0 +1,27 @@
+public class Customer 
+{
+    private int customerAge;
+    private int creditRecord;
+
+    public Customer(int customerAge, int creditRecord)
+    {
+        super(renterName);
+        this.customerAge = customerAge;
+        this.creditRecord = creditRecord;
+    }
+    public int getCustomerAge()
+    {
+        return customerAge;
+    }
+    public int getCreditRecord()
+    {
+        return creditRecord;
+    }
+    @Override
+    public void displayDetails() {
+        super.displayDetails();
+        System.out.println("Name of the Renter: " + renterName);
+        System.out.println("Age of Customer: " + customerAge);
+        System.out.println("Credit Record: " + creditRecord);
+    }
+}
