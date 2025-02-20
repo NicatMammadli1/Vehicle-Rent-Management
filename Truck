@@ -1,0 +1,26 @@
+public class Truck extends Vehicle
+{
+    private int loadSize;
+    private String fuelType;
+
+    public Truck(String vehicleId, String brandName, int modelYear, double rentPricePerDay, int loadSize, String fuelType)
+    {
+        super(vehicleId, brandName, modelYear, rentPricePerDay);
+        this.loadSize = loadSize;
+        this.fuelType = fuelType;
+    }
+    public int getLoadSize()
+    {
+        return loadSize;
+    }
+    public String getFuelType()
+    {
+        return fuelType;
+    }
+    @Override
+    public void displayDetails() {
+        super.displayDetails();
+        System.out.println("Size of the load in pounds: " + loadSize);
+        System.out.println("Fuel Type: " + fuelType);
+    }
+}
