@@ -1,0 +1,26 @@
+public class Car extends Vehicle
+{
+    private int numSeats;
+    private String fuelType;
+
+    public Car(String vehicleId, String brandName, int modelYear, double rentPricePerDay, int numSeats, String fuelType)
+    {
+        super(vehicleId, brandName, modelYear, rentPricePerDay);
+        this.numSeats = numSeats;
+        this.fuelType = fuelType;
+    }
+    public int getNumSeats()
+    {
+        return numSeats;
+    }
+    public String getFuelType()
+    {
+        return fuelType;
+    }
+    @Override
+    public void displayDetails() {
+        super.displayDetails();
+        System.out.println("Number of Seats: " + numSeats);
+        System.out.println("Fuel Type: " + fuelType);
+    }
+}
