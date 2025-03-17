@@ -1,0 +1,52 @@
+public class DebitCardPayment extends PaymentSystem {
+    public enum AccountType { CHECKING, SAVINGS }
+
+    private AccountType accountType; 
+    private double checkingBalance;
+    private double savingsBalance;
+
+    public DebitCardPayment(String debitCard, double checkingBalance, double savingsBalance, AccountType accountType) {
+        super(null, debitCard, 0); 
+        this.checkingBalance = checkingBalance;
+        this.savingsBalance = savingsBalance;
+        this.accountType = accountType;
+
+        if (accountType == AccountType.CHECKING) {
+            this.balance = checkingBalance;
+        } else {
+            this.balance = savingsBalance;
+        }
+    }
+
+
+    public AccountType getAccountType() {
+        return accountType;
+    }
+
+    public double getCheckingBalance() {
+        return checkingBalance;
+    }
+
+    public double getSavingsBalance() {
+        return savingsBalance;
+    }
+
+    @Override
+    public void processPayment(double amount) {
+        if (accountType == AccountType.CHECKING) {
+            if (checkingBalance >= amount) {
+                checkingBalance -= amount;
+                System.out.println("Payment of $" + amount + " processed using Checking Account: " + getDebitCard());
+            } else {
+                System.out.println("Insufficient funds in Checking Account.");
+            }
+        } else if (accountType == AccountType.SAVINGS) {
+            if (savingsBalance >= amount) {
+                savingsBalance -= amount;
+                System.out.println("Payment of $" + amount + " processed using Savings Account: " + getDebitCard());
+            } else {
+                System.out.println("Insufficient funds in Savings Account.");
+            }
+        }
+    }
+}
