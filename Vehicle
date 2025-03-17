@@ -72,15 +72,5 @@ public abstract class Vehicle
     }
     public abstract void displayInfo()
     {
-        System.out.println("Brand: " + brandName);
-        System.out.println("Model Year: " + modelYear);
-        System.out.println("Rent Cost Per Day: $" + rentCostPerDay); 
-        System.out.println("Available: " + (isAvailable ? "Yes" : "No"));
-        if (!isAvailable) 
-        {
-            System.out.println("Rented to: " + renterName); 
-            System.out.println("Rented for: " + rentedDays + " days"); 
-        }
-
     }
 }
