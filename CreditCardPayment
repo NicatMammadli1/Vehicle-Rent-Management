@@ -1,0 +1,37 @@
+public class CreditCardPayment extends PaymentSystem
+{
+    private int limit;
+    
+    public CreditCardPayment(String creditCard, double balance, int limit)
+    {
+        super(creditCard, null, balance);
+        
+        this.limit = limit;
+    }
+    public int getLimit() 
+    {
+        return this.limit;
+    }
+    public void setLimit(int limit)
+    {
+        this.limit = limit;
+    }
+    @Override
+    public abstract void processPayment(double amount)
+    {
+        if(amount > limit)
+        {
+            System.out.println("Transaction declined. Amount exceed the limit.");
+        }
+        else if (getBalance() >= amount) 
+        {
+            balance -= amount;
+            System.out.println("Payment of $" + amount + " processed using Credit Card: " + getCreditCard());
+        } 
+        else 
+        {
+            System.out.println("Insufficient funds on Credit Card.");
+        }
+
+    }
+}
