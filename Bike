@@ -1,6 +1,5 @@
-public class Bike extends Vehicles
+public class Bike extends Vehicle
 {
- 
     private String bikeType;
     private String fuelType;
 
