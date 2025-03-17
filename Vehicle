@@ -70,7 +70,5 @@ public abstract class Vehicle
     {
         return isAvailable;
     }
-    public abstract void displayInfo()
-    {
-    }
+    public abstract void displayInfo();
 }
