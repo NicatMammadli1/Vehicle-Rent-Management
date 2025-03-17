@@ -1,1 +1,33 @@
+public abstract class PaymentSystem
+{
+    private String creditCard;
+    private String debitCard;
+    protected boolean balanceAvailable;
+    protected double balance;
 
+    public PaymentSystem(String creditCard, String debitCard, double balance) 
+    {
+        this.creditCard = creditCard;
+        this.debitCard = debitCard;
+        this.balance = balance;
+        this.balanceAvailable = balance > 0;
+    }
+    
+    public String getCreditCard()
+    {
+        return this.creditCard;
+    }
+    public String getDebitCard()
+    {
+        return this.debitCard;
+    }
+    public boolean balanceAvailable()
+    {
+        return this.balanceAvailable;
+    }
+    public double balance()
+    {
+        return this.balance;
+    }
+    public abstract void processPayment(double amount);
+}
