@@ -8,16 +8,15 @@ public abstract class Vehicle
     private int modelYear;
     private int rentedDays;
 
-    public Vehicle(double rentCostPerDay, String brandName, int modelYear)
-    {
-        this.rentCostPerDay = rentCostPerDay;
-        this.renterName = "";
-        this.brandName = brandName; 
-        this.isAvailable = true;
-        this.rentedDays = 0;
-        this.modelYear = modelYear;
-        this.vehicleId = "";
-    }
+public Vehicle(String vehicleId, String brandName, int modelYear, double rentCostPerDay) 
+{
+    this.vehicleId = vehicleId;
+    this.brandName = brandName;
+    this.modelYear = modelYear;
+    this.rentCostPerDay = rentCostPerDay;
+    this.isAvailable = true;
+}
+
     public double calculateTotalRent() 
     {
         return rentCostPerDay * rentedDays;
