@@ -9,14 +9,6 @@ public class Customer
         this.customerAge = customerAge;
         this.creditRecord = creditRecord;
     }
-    public int getCustomerAge()
-    {
-        return customerAge;
-    }
-    public int getCreditRecord()
-    {
-        return creditRecord;
-    }
     @Override
     public void displayDetails() {
         super.displayDetails();
